@@ -8,7 +8,7 @@ function checkLoveMeter() {
   }
 
   alert('Please help us by watching this ad. Press the back button after 30 seconds to view the results.');
-  window.open('https://your-ad-link.com', '_blank');
+  window.open('https://www.highrevenuenetwork.com/dqpg3cak2?key=b3908da304a081bf9c86f27c84e9e0ee', '_blank');
   
   document.getElementById('message').style.display = 'block';
   
