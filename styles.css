@@ -1,0 +1,48 @@
+body {
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #fff;
+}
+.container {
+  margin-top: 50px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  display: inline-block;
+}
+input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.6);
+  color: #333;
+}
+button {
+  background: #ff758c;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+.heart {
+  font-size: 50px;
+  color: red;
+}
+.result {
+  display: none;
+  margin-top: 20px;
+}
+.share-buttons button {
+  background: #fff;
+  color: #ff758c;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}

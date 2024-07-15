@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Meter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Love Meter</h1>
+    <input type="text" id="yourName" placeholder="Your Name">
+    <input type="text" id="partnerName" placeholder="Your Partner's Name">
+    <button onclick="checkLoveMeter()">Check Love Meter</button>
+    <div id="message" class="result">
+      <p>Please help us by watching this ad. Press the back button after 30 seconds to view the results.</p>
+    </div>
+    <div id="result" class="result">
+      <div class="heart">❤️</div>
+      <p>Love compatibility between <span id="name1"></span> and <span id="name2"></span> is 95%</p>
+      <div class="share-buttons">
+        <button onclick="copyLink()">Copy Link</button>
+        <button onclick="shareWhatsApp()">Share on WhatsApp</button>
+        <button onclick="shareFacebook()">Share on Facebook</button>
+        <button onclick="shareInstagram()">Share on Instagram</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
