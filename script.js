@@ -13,7 +13,7 @@ function checkLoveMeter() {
   document.getElementById('adMessage').style.display = 'block';
 
   setTimeout(() => {
-    const adWindow = window.open('https://your-ad-link.com', '_blank');
+    const adWindow = window.open('https://www.highrevenuenetwork.com/dqpg3cak2?key=b3908da304a081bf9c86f27c84e9e0ee', '_blank');
     if (adWindow) {
       setTimeout(() => {
         const resultURL = `result.html?yourName=${encodeURIComponent(yourName)}&partnerName=${encodeURIComponent(partnerName)}&loveScore=${loveScore}`;
