@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Meter Result</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Love Meter Result</h1>
+    <div class="heart">❤️</div>
+    <p id="resultMessage"></p>
+    <div class="share-buttons">
+      <button onclick="copyLink()">Copy Link</button>
+      <button onclick="shareWhatsApp()">Share on WhatsApp</button>
+      <button onclick="shareFacebook()">Share on Facebook</button>
+      <button onclick="shareInstagram()">Share on Instagram</button>
+    </div>
+    <p id="shareMessage"></p>
+  </div>
+  <script>
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    const yourName = getQueryParam('yourName');
+    const partnerName = getQueryParam('partnerName');
+    const loveScore = getQueryParam('loveScore');
+
+    document.getElementById('resultMessage').innerText = `Love compatibility between ${yourName} and ${partnerName} is ${loveScore}%`;
+    document.getElementById('shareMessage').innerHTML = `Our love score is ${loveScore}%. Visit <a href="${window.location.origin}">this link</a> to calculate your results.`;
+
+    function copyLink() {
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        alert('Link copied to clipboard!');
+      });
+    }
+
+    function shareWhatsApp() {
+      const url = window.location.href;
+      window.open(`https://api.whatsapp.com/send?text=Check out our love compatibility: ${url}`, '_blank');
+    }
+
+    function shareFacebook() {
+      const url = window.location.href;
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+    }
+
+    function shareInstagram() {
+      const url = window.location.href;
+      window.open(`https://www.instagram.com/?url=${url}`, '_blank');
+    }
+  </script>
+</body>
+</html>
