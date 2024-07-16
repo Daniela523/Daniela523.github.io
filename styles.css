@@ -33,3 +33,16 @@ button {
   display: none;
   margin-top: 20px;
 }
+.heart {
+  font-size: 50px;
+  color: red;
+}
+.share-buttons button {
+  background: #fff;
+  color: #ff758c;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
