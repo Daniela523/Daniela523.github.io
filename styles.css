@@ -8,26 +8,39 @@ body {
   margin: 0;
 }
 
-.container {
+.final-result {
   text-align: center;
   background: #fff;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  animation: fadeIn 1s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  font-size: 2em;
+.final-result h1 {
+  font-size: 2.5em;
   color: #e91e63;
 }
 
-input {
-  padding: 10px;
-  margin: 10px;
-  border: 2px solid #e91e63;
-  border-radius: 5px;
-  font-size: 1em;
+.final-result p {
+  font-size: 1.5em;
+  margin: 20px 0;
+}
+
+/* Heartbeat Animation */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+#heart {
+  font-size: 100px;
+  color: #e91e63;
+  margin-bottom: 20px;
+  animation: heartbeat 1s infinite;
 }
 
 button {
@@ -38,14 +51,9 @@ button {
   border-radius: 5px;
   font-size: 1em;
   cursor: pointer;
+  margin: 10px;
 }
 
 button:hover {
   background-color: #d81b60;
-}
-
-/* Animation */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }
