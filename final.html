@@ -8,11 +8,29 @@
 </head>
 <body>
   <div class="final-result">
-    <h1>Congratulations <span id="name1"></span> & <span id="name2"></span>!</h1>
-    <p>Your love score is <span id="love-score"></span>%!</p>
+    <h1>❤️ Your Love Score ❤️</h1>
+    <div id="heart">💖</div> <!-- Animated Heart -->
+    <p>Your love score is <span id="love-score">85</span>%!</p>
+
     <button id="share-facebook">Share on Facebook</button>
     <button id="share-instagram">Share on Instagram</button>
   </div>
-  <script src="final.js"></script>
+
+  <script>
+    // Get the love score dynamically (for this example it's hardcoded to 85)
+    const loveScore = Math.floor(Math.random() * 50) + 50;
+    document.getElementById('love-score').textContent = loveScore;
+
+    // Share on Facebook
+    document.getElementById('share-facebook').addEventListener('click', function() {
+      const shareURL = `https://www.facebook.com/sharer/sharer.php?u=https://username.github.io`;
+      window.open(shareURL, '_blank');
+    });
+
+    // Share on Instagram (manual guidance)
+    document.getElementById('share-instagram').addEventListener('click', function() {
+      alert('You can share this manually on Instagram Stories by uploading your result.');
+    });
+  </script>
 </body>
 </html>
