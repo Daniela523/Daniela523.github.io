@@ -7,7 +7,6 @@ const countdownTimer = setInterval(() => {
   
   if (timeLeft <= 0) {
     clearInterval(countdownTimer);
-    // Redirect to the ad link
-    window.location.href = "https://www.cpmrevenuegate.com/dqpg3cak2?key=b3908da304a081bf9c86f27c84e9e0ee";
+    window.close(); // Close the ad tab
   }
 }, 1000);
