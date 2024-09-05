@@ -4,9 +4,11 @@ const countdownElement = document.getElementById('countdown');
 const countdownTimer = setInterval(() => {
   timeLeft--;
   countdownElement.textContent = timeLeft;
-  
+
   if (timeLeft <= 0) {
     clearInterval(countdownTimer);
-    window.close(); // Close the ad tab
+    
+    // Close the tab after countdown finishes
+    window.close();
   }
 }, 1000);
