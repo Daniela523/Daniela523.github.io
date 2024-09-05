@@ -19,16 +19,27 @@ if (loveScore > 80) {
 }
 emojiElement.textContent = emoji;
 
-// Set the base URL for your site
-const baseUrl = `https://Daniela523.github.io/`;
-
-// Share on Facebook
-document.getElementById('share-facebook').addEventListener('click', function() {
-  const shareURL = `https://www.facebook.com/sharer/sharer.php?u=${baseUrl}&quote=My%20Love%20Score%20with%20${name1}%20and%20${name2}%20is%20${loveScore}%25!%20Check%20yours%20at%20${baseUrl}`;
-  window.open(shareURL, '_blank');
+// Capture the score section for sharing
+document.getElementById('share-instagram').addEventListener('click', function() {
+  html2canvas(document.querySelector(".final-result")).then(canvas => {
+    const image = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
+    link.download = 'love-score.png';
+    link.href = image;
+    link.click(); // Trigger the download
+    alert("Share the downloaded image on Instagram.");
+  });
 });
 
-// Share on Instagram (manual guidance for Instagram Stories)
-document.getElementById('share-instagram').addEventListener('click', function() {
-  alert('You can share your score on Instagram Stories by taking a screenshot and uploading it.');
+// WhatsApp Share with Custom Caption
+document.getElementById('share-whatsapp').addEventListener('click', function() {
+  const whatsappMessage = `My love score with ${name1} and ${name2} is ${loveScore}%! Check yours at https://Daniela523.github.io`;
+  const whatsappURL = `https://api.whatsapp.com/send?text=${encodeURIComponent(whatsappMessage)}`;
+  window.open(whatsappURL, '_blank');
+});
+
+// Facebook Share
+document.getElementById('share-facebook').addEventListener('click', function() {
+  const shareURL = `https://www.facebook.com/sharer/sharer.php?u=https://Daniela523.github.io&quote=My%20Love%20Score%20with%20${name1}%20and%20${name2}%20is%20${loveScore}%25!%20Check%20yours%20at%20https://Daniela523.github.io`;
+  window.open(shareURL, '_blank');
 });
