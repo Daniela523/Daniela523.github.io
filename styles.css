@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(135deg, #ff4b1f, #1fddff);
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0); /* Pink gradient */
   font-family: 'Arial', sans-serif;
   display: flex;
   justify-content: center;
@@ -10,7 +10,7 @@ body {
 
 .container, .final-result, .ad-bar {
   text-align: center;
-  background: rgba(255, 255, 255, 0.6); /* Glass effect */
+  background: rgba(255, 255, 255, 0.4); /* Glass effect */
   backdrop-filter: blur(10px); /* Glass effect */
   padding: 30px;
   border-radius: 15px;
@@ -33,6 +33,12 @@ h1 {
   color: white;
   font-size: 1.5em;
   z-index: 1000;
+}
+
+.ad-redirect-message {
+  padding-top: 100px;
+  font-size: 1.2em;
+  color: #333;
 }
 
 input {
