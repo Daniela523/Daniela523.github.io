@@ -1,38 +1,86 @@
+/* Gradient background for the result page */
 body {
-  background: linear-gradient(135deg, #ffafbd, #ffc3a0); /* Pink gradient */
-  font-family: 'Arial', sans-serif;
-  text-align: center;
-  padding: 50px;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .result-container {
-  background: rgba(255, 255, 255, 0.3); /* Glass effect */
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-}
-
-#result {
-  font-size: 24px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
   margin: 20px;
 }
 
+.glass-box {
+  background: rgba(255, 255, 255, 0.4); /* Glass effect */
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+h1 {
+  color: #333;
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.5em;
+  color: #444;
+}
+
+#emoji {
+  font-size: 3em;
+  margin-top: 10px;
+}
+
+/* Button styles */
 button {
-  background-color: #ff4081;
-  color: white;
-  border: none;
   padding: 10px 20px;
-  font-size: 18px;
+  margin-top: 20px;
+  font-size: 16px;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin: 10px;
+  color: white;
+  background-color: #ff6b6b;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #ff80ab;
+  background-color: #ff4d4d;
 }
 
-#canvas {
-  display: none;
+.share-buttons {
+  margin-top: 20px;
+}
+
+.share-buttons button {
+  margin: 5px;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  #emoji {
+    font-size: 2.5em;
+  }
+
+  button {
+    font-size: 14px;
+  }
 }
