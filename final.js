@@ -1,45 +1,51 @@
-const urlParams = new URLSearchParams(window.location.search);
-const name1 = urlParams.get('name1');
-const name2 = urlParams.get('name2');
-
-// Generate random love score between 0 and 100
+// Generate a random love score between 0 and 100
 const loveScore = Math.floor(Math.random() * 101);
-document.getElementById('love-score').textContent = loveScore;
+const loveScoreText = document.getElementById('loveScore');
+loveScoreText.textContent = loveScore;
 
-// Add corresponding emoji based on love score
-const emojiElement = document.getElementById('emoji');
-let emoji = '💔'; // Default emoji for low scores
+// Function to generate an image from canvas
+function generateImage() {
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
 
-if (loveScore > 80) {
-  emoji = '💖'; // High love score
-} else if (loveScore > 50) {
-  emoji = '❤️'; // Moderate love score
-} else if (loveScore > 30) {
-  emoji = '💕'; // Lower score
+  // Set canvas size
+  canvas.width = 600;
+  canvas.height = 400;
+
+  // Set background color and text for the image
+  ctx.fillStyle = '#ffafbd'; // Pink gradient color
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.font = '30px Arial';
+  ctx.fillStyle = 'white';
+  ctx.fillText('Your Love Score', 200, 150);
+
+  ctx.font = '50px Arial';
+  ctx.fillStyle = '#fff';
+  ctx.fillText(`${loveScore}`, 250, 220);
+
+  return canvas.toDataURL("image/png");
 }
-emojiElement.textContent = emoji;
 
-// Capture the score section for sharing
-document.getElementById('share-instagram').addEventListener('click', function() {
-  html2canvas(document.querySelector(".final-result")).then(canvas => {
-    const image = canvas.toDataURL('image/png');
-    const link = document.createElement('a');
-    link.download = 'love-score.png';
-    link.href = image;
-    link.click(); // Trigger the download
-    alert("Share the downloaded image on Instagram.");
+// Download the generated image
+document.getElementById('downloadBtn').addEventListener('click', () => {
+  const link = document.createElement('a');
+  link.href = generateImage();
+  link.download = 'love_score.png';
+  link.click();
+});
+
+// Share on Facebook
+document.getElementById('facebookShareBtn').addEventListener('click', () => {
+  const image = generateImage();
+  const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(image)}`;
+  window.open(fbUrl, '_blank');
+});
+
+// Copy Link Functionality
+document.getElementById('copyLinkBtn').addEventListener('click', () => {
+  const copyText = `My love score is ${loveScore}. Check yours here: https://daniela523.github.io`;
+  navigator.clipboard.writeText(copyText).then(() => {
+    alert("Link copied to clipboard!");
   });
-});
-
-// WhatsApp Share with Custom Caption
-document.getElementById('share-whatsapp').addEventListener('click', function() {
-  const whatsappMessage = `My love score with ${name1} and ${name2} is ${loveScore}%! Check yours at https://Daniela523.github.io`;
-  const whatsappURL = `https://api.whatsapp.com/send?text=${encodeURIComponent(whatsappMessage)}`;
-  window.open(whatsappURL, '_blank');
-});
-
-// Facebook Share
-document.getElementById('share-facebook').addEventListener('click', function() {
-  const shareURL = `https://www.facebook.com/sharer/sharer.php?u=https://Daniela523.github.io&quote=My%20Love%20Score%20with%20${name1}%20and%20${name2}%20is%20${loveScore}%25!%20Check%20yours%20at%20https://Daniela523.github.io`;
-  window.open(shareURL, '_blank');
 });
