@@ -1,81 +1,38 @@
 body {
   background: linear-gradient(135deg, #ffafbd, #ffc3a0); /* Pink gradient */
   font-family: 'Arial', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-.container, .final-result, .ad-bar {
   text-align: center;
-  background: rgba(255, 255, 255, 0.4); /* Glass effect */
-  backdrop-filter: blur(10px); /* Glass effect */
-  padding: 30px;
+  padding: 50px;
+}
+
+.result-container {
+  background: rgba(255, 255, 255, 0.3); /* Glass effect */
+  padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
 }
 
-h1 {
-  font-size: 2.5em;
-  color: #e91e63;
-}
-
-.ad-bar {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  font-size: 1.5em;
-  z-index: 1000;
-}
-
-.ad-redirect-message {
-  padding-top: 100px;
-  font-size: 1.2em;
-  color: #333;
-}
-
-input {
-  padding: 12px;
-  margin: 12px;
-  border: 2px solid #e91e63;
-  border-radius: 8px;
-  font-size: 1.2em;
+#result {
+  font-size: 24px;
+  margin: 20px;
 }
 
 button {
-  padding: 12px 24px;
-  background-color: #e91e63;
+  background-color: #ff4081;
   color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 1.2em;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
   cursor: pointer;
+  margin: 10px;
 }
 
 button:hover {
-  background-color: #d81b60;
+  background-color: #ff80ab;
 }
 
-/* Heartbeat Animation */
-@keyframes heartbeat {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-}
-
-#heart {
-  font-size: 100px;
-  color: #e91e63;
-  margin-bottom: 20px;
-  animation: heartbeat 1s infinite;
+#canvas {
+  display: none;
 }
