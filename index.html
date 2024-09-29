@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator 💖</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>❤️ Love Calculator ❤️</h1>
+        <p class="instructions">Enter your name to calculate your love score!</p>
+        
+        <form id="loveForm">
+            <label for="yourName">Your Name:</label>
+            <input type="text" id="yourName" placeholder="Enter your name" required>
+            
+            <small class="ad-note">You will be directed to an advertisement for 30 seconds while the score is calculated. Please wait! 😍</small>
+            
+            <button type="submit">💖 Calculate Love Score 💖</button>
+        </form>
+
+        <div id="resultContainer" style="display:none;">
+            <h2>💌 Your Love Score is Ready!</h2>
+            <img id="resultImage" alt="Your love score image" />
+            <div class="share-options">
+                <button id="facebookShare">Share on Facebook</button>
+                <button id="whatsappShare">Share on WhatsApp</button>
+                <button id="copyLink">Copy Link</button>
+            </div>
+        </div>
+
+        <!-- Canvas to generate dynamic share image -->
+        <canvas id="resultCanvas" style="display:none;"></canvas>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
