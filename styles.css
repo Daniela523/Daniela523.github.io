@@ -1,11 +1,11 @@
 // Firebase Configuration
 const firebaseConfig = {
-    apiKey: "YOUR_FIREBASE_API_KEY",
-    authDomain: "YOUR_FIREBASE_AUTH_DOMAIN",
-    projectId: "YOUR_FIREBASE_PROJECT_ID",
-    storageBucket: "YOUR_FIREBASE_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_FIREBASE_SENDER_ID",
-    appId: "YOUR_FIREBASE_APP_ID"
+    apiKey: "AIzaSyA3PuGUNddN2eA_h6IsaqjjHSghDQgHSq8",
+    authDomain: "love-calculator-image-store.firebaseapp.com",
+    projectId: "love-calculator-image-store",
+    storageBucket: "love-calculator-image-store.appspot.com",
+    messagingSenderId: "203778309437",
+    appId: "1:203778309437:web:643c337fb19383871e9954"
 };
 
 // Initialize Firebase
@@ -79,7 +79,7 @@ function generateAndUploadImage(userName, loveScore) {
     // Add invitation text
     ctx.font = 'italic 18px Arial';
     ctx.fillText(`Calculate your love score at`, canvas.width / 2, 320);
-    ctx.fillText(`https://Daniela523.github.io/LoveCalculator`, canvas.width / 2, 350);
+    ctx.fillText(`https://Daniela523.github.io`, canvas.width / 2, 350);
 
     // Convert canvas to Blob and upload to Firebase
     canvas.toBlob(function(blob) {
@@ -113,12 +113,12 @@ function displayResultImage(imageUrl) {
 
     // WhatsApp sharing
     document.getElementById('whatsappShare').onclick = function() {
-        const shareText = `Check out my love score! Calculate yours here: https://Daniela523.github.io/LoveCalculator`;
+        const shareText = `Check out my love score! Calculate yours here: https://Daniela523.github.io`;
         window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}&media=${encodeURIComponent(imageUrl)}`);
     };
 
     // Copy Link
     document.getElementById('copyLink').onclick = function() {
-        const linkText = `My love score is amazing! Check yours at https://Daniela523.github.io/LoveCalculator`;
+        const linkText = `My love score is amazing! Check yours at https://Daniela523.github.io`;
         navigator.clipboard.writeText(linkText);
         alert("Link copied
